@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8fafc;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+.box {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #1a3a5c;
+}
+
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input, textarea, button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
+
+.room {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.form-card {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.form-card h1 {
+    margin: 0 0 8px;
+    font-size: 1.8rem;
+}
+
+.form-card p {
+    margin: 0 0 24px;
+    color: #6b7280;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    font: inherit;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1f2937;
+}
+
+.field input:focus,
+.field select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-card button {
+    width: 100%;
+    margin-top: 22px;
+    font: inherit;
+    font-weight: 700;
+    padding: 13px;
+    border: none;
+    border-radius: 999px;
+    background: #2563eb;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.form-card button:hover {
+    background: #1d4ed8;
+}
+
+.error {
+    color: white;
+    background: red;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.success {
+    color: white;
+    background: green;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 16px 12px;
+    }
+    .form-card {
+        padding: 24px 20px;
+    }
+    .form-card h1 {
+        font-size: 1.5rem;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}

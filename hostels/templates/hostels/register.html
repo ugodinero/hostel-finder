@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Landlord Registration</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+<div class="form-card">
+<h1>Landlord Registration</h1>
+<p>Please fill in your details below.</p>
+<form method="post">
+{% csrf_token %}
+<div class="form-grid">
+<div class="field">
+{{ form.first_name.label_tag }}
+{{ form.first_name }}
+{{ form.first_name.errors }}
+</div>
+<div class="field">
+{{ form.last_name.label_tag }}
+{{ form.last_name }}
+{{ form.last_name.errors }}
+</div>
+<div class="field">
+{{ form.username.label_tag }}
+{{ form.username }}
+{{ form.username.errors }}
+</div>
+<div class="field">
+{{ form.email.label_tag }}
+{{ form.email }}
+{{ form.email.errors }}
+</div>
+<div class="field">
+{{ form.phone.label_tag }}
+{{ form.phone }}
+{{ form.phone.errors }}
+</div>
+<div class="field">
+{{ form.password1.label_tag }}
+{{ form.password1 }}
+{{ form.password1.errors }}
+</div>
+<div class="field">
+{{ form.password2.label_tag }}
+{{ form.password2 }}
+{{ form.password2.errors }}
+</div>
+</div>
+<button type="submit">Register</button>
+</form>
+<p><a href="/hostels/login/">Already have an account? Login here</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Message Landlord</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+<div class="box">
+<h1>Message Landlord</h1>
+<p>Room: {{ room.location }} - {{ room.room_type }}</p>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Send Message</button>
+</form>
+<p><a href="{% url 'room_detail' room.pk %}">Back to Room</a></p>
+</div>
+</body>
+</html>

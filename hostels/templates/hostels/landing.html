@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hostel Finder</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+<style>
+body { margin: 0; background: #111111; color: #f5f5f5; }
+.topnav { background: #111111; padding: 20px; }
+.topnav a { color: #f5f5f5; text-decoration: none; margin-right: 30px; }
+.topnav a.logo { font-size: 20px; font-weight: bold; }
+.hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
+.hero h1 { font-size: 28px; margin: 0; font-weight: normal; }
+.hero h1 span { display: block; font-size: 80px; font-weight: bold; line-height: 1; }
+.hero p { color: #cccccc; font-size: 17px; line-height: 1.6; }
+.searchcard { background: #f5f5f5; color: #111111; border-radius: 15px; padding: 20px; margin-top: 20px; }
+.searchcard input { padding: 12px; font-size: 16px; width: 65%; }
+.searchcard button { padding: 12px 20px; font-size: 16px; background: #111111; color: white; border: none; border-radius: 5px; }
+.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.photo { background: #333333; color: #f5f5f5; border-radius: 120px 120px 15px 15px; height: 200px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 15px; }
+.features { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; padding: 20px; max-width: 1100px; margin: 0 auto; }
+.feature { background: #f5f5f5; color: #111111; border-radius: 15px; padding: 20px; }
+.feature h3 { margin-top: 0; }
+.cta { max-width: 1100px; margin: 0 auto; padding: 20px; text-align: center; }
+.cta a { display: inline-block; background: #f5f5f5; color: #111111; text-decoration: none; font-size: 22px; font-weight: bold; padding: 20px 30px; border-radius: 15px; }
+.places { text-align: center; padding: 20px; }
+.places a { color: #f5f5f5; margin-right: 15px; }
+.footer { text-align: center; padding: 20px; color: #cccccc; }
+@media (max-width: 700px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero h1 span { font-size: 50px; }
+    .features { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+<a href="/" class="logo">Hostel Finder</a>
+<a href="/">Home</a>
+<a href="/hostels/">All Rooms</a>
+<a href="/hostels/register/">Register as Landlord</a>
+<a href="/hostels/register/student/">Register as Student</a>
+{% if user.is_authenticated %}
+    <a href="/hostels/logout/">Logout</a>
+{% else %}
+    <a href="/hostels/login/">Login</a>
+{% endif %}
+
+</div>
+
+<div class="hero">
+<div>
+<h1>Hostel <span>FINDER</span></h1>
+<p>Find a self contain in Abuja or a one bedroom flat in Lagos, close to your school, with photos, prices from 15000, and the landlord's phone number.</p>
+<div class="searchcard">
+<form method="get" onsubmit="return checkSearch()">
+<input type="text" name="q" id="searchBox" placeholder="Search by location...">
+<button type="submit">Search</button>
+</form>
+<p>Rooms in Abuja and Lagos</p>
+</div>
+</div>
+<div class="photos">
+<div class="photo"><img src="{% static 'images/hero.jpg' %}" alt="Abuja self contain room" style="width: 100%; height: 100%; object-fit: cover; border-radius: 120px 120px 15px 15px;"></div>
+<div class="photo"><img src="{% static 'images/lagos.jpg' %}" alt="Lagos one bedroom flat" style="width: 100%; height: 100%; object-fit: cover; border-radius: 120px 120px 15px 15px;"></div>
+<div class="photo"><img src="{% static 'images/room2.jpg' %}" alt="Room photo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 120px 120px 15px 15px;"></div>
+<div class="photo"><img src="{% static 'images/hostel.jpg' %}" alt="Hostel Finder building" style="width: 100%; height: 100%; object-fit: cover; border-radius: 120px 120px 15px 15px;"></div>
+</div>
+</div>
+
+<div class="features">
+<div class="feature">
+<h3>Search by location</h3>
+<p>Type Abuja or Lagos and find rooms close to your school.</p>
+</div>
+<div class="feature">
+<h3>See photo and price</h3>
+<p>See the room photo, room type and price before you call anyone.</p>
+</div>
+<div class="feature">
+<h3>Contact the landlord</h3>
+<p>Click a room on the All Rooms page and call the landlord directly.</p>
+</div>
+</div>
+
+<div class="cta">
+<a href="/hostels/">See All Rooms &rarr;</a>
+</div>
+
+<div class="places">
+<p>Popular locations: <a href="/?q=abuja">Abuja</a> <a href="/?q=lagos">Lagos</a></p>
+</div>
+
+<div class="footer">
+<p>Hostel Finder</p>
+</div>
+
+<script src="{% static 'scripts/script.js' %}"></script>
+</body>
+</html>

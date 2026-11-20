@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ room.location }} - Hostel Finder</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .box { max-width: 900px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>{{ room.location }}</h1>
+        {% if room.photo %}
+            <img src="{{ room.photo.url }}" style="max-width: 100%;">
+        {% endif %}
+        {% if room.photo2 %}
+    <img src="{{ room.photo2.url }}" style="max-width: 100%;">
+{% endif %}
+{% if room.photo3 %}
+    <img src="{{ room.photo3.url }}" style="max-width: 100%;">
+{% endif %}
+
+        <p><strong>Type:</strong> {{ room.room_type }}</p>
+        <p><strong>Price:</strong> {{ room.price }}</p>
+        <p>{{ room.description }}</p>
+        <p><strong>Landlord:</strong> {{ room.landlord.user.username }}</p>
+        <p><strong>Phone:</strong> {{ room.landlord.phone }}</p>
+        <p>
+    <a href="tel:{{ room.landlord.phone }}">Call Landlord</a> |
+    <a href="https://wa.me/{{ whatsapp_phone }}?text=Hello, I am interested in your room in {{ room.location }}." target="_blank">WhatsApp Landlord</a>
+</p>
+
+        <p>
+            <p><a href="{% url 'request_room' room.pk %}">I want this room</a></p>
+            <p><a href="{% url 'message_landlord' room.pk %}">Message Landlord</a></p>
+            <a href="/hostels/">Back to All Rooms</a> |
+            <a href="/">Home</a>
+        </p>
+    </div>
+</body>
+</html>
