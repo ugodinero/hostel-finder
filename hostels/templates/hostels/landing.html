@@ -47,11 +47,13 @@ body { margin: 0; background: #111111; color: #f5f5f5; }
 <a href="/" class="logo">Hostel Finder</a>
 <a href="/">Home</a>
 <a href="/hostels/">All Rooms</a>
-<a href="/hostels/register/">Register as Landlord</a>
-<a href="/hostels/register/student/">Register as Student</a>
 {% if user.is_authenticated %}
+    <a href="/hostels/my-rooms/">My Rooms</a>
+    <a href="/hostels/add/">Add Room</a>
     <a href="/hostels/logout/">Logout</a>
 {% else %}
+    <a href="/hostels/register/">Register as Landlord</a>
+    <a href="/hostels/register/student/">Register as Student</a>
     <a href="/hostels/login/">Login</a>
 {% endif %}
 

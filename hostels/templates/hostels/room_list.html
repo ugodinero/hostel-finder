@@ -22,7 +22,7 @@ body { background: #f1f5f9; }
 <body>
 <div class="box">
 <h1>Rooms</h1>
-<p><a href="/">Home</a> | <a href="{% url 'change_password' %}">Change Password</a> | <a href="/hostels/logout/">Logout</a></p>
+<p><a href="/">Home</a> | <a href="/hostels/my-rooms/">My Rooms</a> | <a href="/hostels/add/">Add Room</a> | <a href="{% url 'change_password' %}">Change Password</a> | <a href="/hostels/logout/">Logout</a></p>
 <form method="get">
 <input type="number" name="max_price" placeholder="Max price" value="{{ request.GET.max_price }}">
 <input type="text" name="room_type" placeholder="Room type" value="{{ request.GET.room_type }}">
