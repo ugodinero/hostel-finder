@@ -8,15 +8,15 @@
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 <style>
 body { margin: 0; background: #111111; color: #f5f5f5; }
-.topnav { background: #111111; padding: 20px; }
-.topnav a { color: #f5f5f5; text-decoration: none; margin-right: 30px; }
+.topnav { background: #111111; padding: 15px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px 20px; }
+.topnav a { color: #f5f5f5; text-decoration: none; }
 .topnav a.logo { font-size: 20px; font-weight: bold; }
 .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px 20px; max-width: 1100px; margin: 0 auto; }
-.hero h1 { font-size: 28px; margin: 0; font-weight: normal; }
-.hero h1 span { display: block; font-size: 80px; font-weight: bold; line-height: 1; }
+.hero h1 { font-size: 28px; margin: 0; font-weight: normal; color: #ffffff; }
+.hero h1 span { display: block; font-size: 80px; font-weight: bold; line-height: 1; color: #ffffff; }
 .hero p { color: #cccccc; font-size: 17px; line-height: 1.6; }
 .searchcard { background: #f5f5f5; color: #111111; border-radius: 15px; padding: 20px; margin-top: 20px; }
-.searchcard input { padding: 12px; font-size: 16px; width: 65%; }
+.searchcard input { padding: 12px; font-size: 16px; width: 65%; box-sizing: border-box; }
 .searchcard button { padding: 12px 20px; font-size: 16px; background: #111111; color: white; border: none; border-radius: 5px; }
 .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 .photo { background: #333333; color: #f5f5f5; border-radius: 120px 120px 15px 15px; height: 200px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 15px; }
@@ -29,8 +29,14 @@ body { margin: 0; background: #111111; color: #f5f5f5; }
 .places a { color: #f5f5f5; margin-right: 15px; }
 .footer { text-align: center; padding: 20px; color: #cccccc; }
 @media (max-width: 700px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero h1 span { font-size: 50px; }
+    .topnav { padding: 12px 15px; gap: 8px 15px; }
+    .topnav a.logo { width: 100%; }
+    .topnav a { font-size: 15px; }
+    .hero { grid-template-columns: 1fr; padding: 20px 15px; }
+    .hero h1 span { font-size: 48px; }
+    .searchcard input { width: 100%; margin-bottom: 10px; }
+    .searchcard button { width: 100%; }
+    .photo { height: 160px; }
     .features { grid-template-columns: 1fr; }
 }
 </style>
