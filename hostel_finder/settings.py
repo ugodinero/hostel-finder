@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hostels'
+    'hostels',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -136,16 +137,17 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 MAILERS = {
     'default': {
-        'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
+        'BACKEND': 'anymail.backends.brevo.EmailBackend',
         'OPTIONS': {
-            'host': 'smtp.gmail.com',
-            'port': 465,
-            'username': 'ugochukwugreat07@gmail.com',
-            'password': os.environ.get('EMAIL_PASSWORD', ''),
-            'use_ssl': True,
+            'api_key': os.environ.get('BREVO_API_KEY', ''),
         },
     },
 }
+DEFAULT_FROM_EMAIL = 'ugochukwugreat07@gmail.com'
+ANYMAIL = {
+    'IGNORE_UNSUPPORTED_FEATURES': True,
+}
+
 
 STATIC_ROOT = BASE_DIR / 'productionfiles'
 
