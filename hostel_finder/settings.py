@@ -139,10 +139,10 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.smtp.EmailBackend',
         'OPTIONS': {
             'host': 'smtp.gmail.com',
-            'port': 587,
+            'port': 465,
             'username': 'ugochukwugreat07@gmail.com',
             'password': os.environ.get('EMAIL_PASSWORD', ''),
-            'use_tls': True,
+            'use_ssl': True,
         },
     },
 }
