@@ -3,4 +3,7 @@ whitenoise
 gunicorn
 Pillow
 django-anymail[brevo]
+dj-database-url
+psycopg2-binary
+
 
